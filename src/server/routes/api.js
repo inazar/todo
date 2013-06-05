@@ -15,6 +15,7 @@ define([
 					} else res.send(task);
 				}, next);
 			} else {
+				delete req.query.user;
 				when(Tasks.query(lang.mixin({user: req.user && req.user.name || req.session.user && req.session.user.name}, req.query), {sort: [{attribute: "timestamp", descending: true}]}), function (tasks) {
 					res.send(tasks);
 				}, next);

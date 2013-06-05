@@ -66,7 +66,6 @@ var profile = {
 			include: [
 				'dojo/domReady',
 				'dojo/_base/declare',
-				'dojo/query',
 				"dojo/on",
 				"dojo/topic",
 				"dojo/request",
