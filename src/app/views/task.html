@@ -1,0 +1,10 @@
+<tr>
+	<td class="taskStatus"><div data-dojo-type="dijit/form/CheckBox" data-dojo-attach-point="complete"></div></td>
+	<td class="taskContent"><div data-dojo-type="dijit/InlineEditBox" data-dojo-props="editor:'dijit/form/TextBox',editorParams:{class: 'taskContent'}" data-dojo-attach-point="editor"></div></td>
+	<td class="taskPriority"><select data-dojo-type="dijit/form/Select" data-dojo-attach-point="priority" style="width:75px;">
+		<option value="high">High</option>
+		<option value="normal">Normal</option>
+		<option value="low">Low</option>
+	</select></td>
+	<td class="taskRemove"><div data-dojo-type="dijit/form/Button" data-dojo-props="iconClass:'dijitIconDelete',label:'Delete'" data-dojo-attach-point="remove"></div></td>
+</tr>

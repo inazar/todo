@@ -1,0 +1,34 @@
+<div>
+	<div data-dojo-type="dijit/form/Form" data-dojo-attach-point="form">
+		<table>
+			<tr>
+				<td><label for="loginEmail">Login:</label>&nbsp;</td>
+				<td><input id="login" align="right"
+					data-dojo-type="dijit/form/ValidationTextBox"
+					data-dojo-attach-point="name"
+					name="name" required />
+				</td>
+			</tr>
+			<tr>
+				<td><label for="loginPassword">Password:</label>&nbsp;</td>
+				<td><input id="loginPassword" align="right"
+					data-dojo-type="dijit/form/MappedTextBox"
+					data-dojo-attach-point="password"
+					type="password" name="password" required />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right">
+					<a href="#" data-dojo-attach-point="fetch">Fetch</a>&nbsp;
+					<a href="#" data-dojo-attach-point="register">Register</a>&nbsp;
+					<button type="submit"
+						data-dojo-type="dijit/form/Button"
+						data-dojo-attach-point="button">
+						Enter
+					</button>
+				</td>
+			</tr>
+			<tr><td colspan="2"><div id="error"></div></td></tr>
+		</table>
+	</div>
+</div>
