@@ -26,7 +26,7 @@ define([
 		var pane = dom.byId('error');
 		if (pane) {
 			style.set(pane, 'color', 'red');
-			pane.innerHTML = err.response.data;
+			pane.innerHTML = err.response.data || err.response.text;
 		}
 		if (err.response.status === 401) {return topic.publish('login'); }
 	});
