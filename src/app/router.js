@@ -112,6 +112,7 @@ define([
 
 	topic.subscribe('fetch', function (params) {
 		request.get('/api/tasks/', {
+			handleAs: 'json',
 			headers: {
 				'Authorization': 'Basic '+encode64((params.name || '')+':'+(params.password || ''))
 			}
