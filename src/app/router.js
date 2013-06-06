@@ -1,3 +1,4 @@
+/*jshint dojo:true */
 define([
 	'require',
 	"dojo/topic",
@@ -9,7 +10,12 @@ define([
 
 	var widgets = [], route = '', loggedInUser = null;
 
-	function _destroyWidgets() { widgets.forEach(function (widget) { widget.destroyRecursive(); }); }
+	function _destroyWidgets() {
+		widgets.forEach(function (widget) {
+			widget.destroyRecursive();
+		});
+		widgets = [];
+	}
 
 	function _Dialog (Content) {
 		var dialog = new Dialog({
