@@ -51,6 +51,8 @@ var profile = {
 	// only suitable if you are not supporting IE7 and earlier.)
 	selectorEngine: 'acme',
 
+	packages:[ "dojo", "dijit", "app" ],
+
 	// Builds can be split into multiple different JavaScript files called "layers". This allows applications to
 	// defer loading large sections of code until they are actually required while still allowing multiple modules to
 	// be compiled into a single file.
@@ -66,31 +68,54 @@ var profile = {
 			include: [
 				'dojo/domReady',
 				'dojo/_base/declare',
+				"dojo/_base/config",
+				"dojo/_base/lang",
 				"dojo/on",
 				"dojo/topic",
-				"dojo/request",
 				"dojo/request/default",
+				"dojo/request/handlers",
 				"dojo/request/notify",
+				"dojo/request/util",
+				"dojo/request",
 				'dijit/Dialog',
 				"dijit/_WidgetBase",
 				"dijit/_TemplatedMixin",
 				"dijit/_WidgetsInTemplateMixin",
+				'app/util/_base',
 				'app/util/MD5',
 				'dijit/form/Form',
 				'dijit/form/ValidationTextBox',
 				'dijit/form/MappedTextBox',
 				'dijit/form/Button',
-				'app/main',
 				'app/run',
 				'app/router',
-				'app/widgets/login'
+				'app/main',
+				'app/widgets/login',
+				'app/widgets/register'
 			],
+			exclude: [ 'dojo/request/node' ],
 
 			// By default, the build system will try to include `dojo/main` in the built `dojo/dojo` layer, which adds
 			// a bunch of stuff we do not want or need. We want the initial script load to be as small and quick to
 			// load as possible, so we configure it as a custom, bootable base.
 			boot: true,
 			customBase: true
+		},
+		'app/widgets/tasks': {
+			include: [
+				"dojo/cookie",
+				"dojo/dom-construct",
+				"dojo/store/JsonRest",
+				"dojo/store/Observable",
+				"dijit/layout/BorderContainer",
+				"dijit/layout/ContentPane",
+				"dijit/InlineEditBox",
+				"dijit/form/Select",
+				"dijit/form/CheckBox",
+				"app/widgets/taskTable",
+				"app/stores/tasks",
+				"app/widgets/task"
+			]
 		}
 	},
 
@@ -116,6 +141,12 @@ var profile = {
 		'dojo-xhr-factory': 0,
 
 		// We are not loading tests in production, so we can get rid of some test sniffing code.
-		'dojo-test-sniff': 0
+		'dojo-test-sniff': 0,
+
+		'host-node': 0,
+		'dojo-bidi': 0,
+		'dojo-firebug': 0,
+		'host-browser': 1,
+		'dom': 1
 	}
 };

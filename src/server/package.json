@@ -1,10 +1,9 @@
 {
-	"name": "app",
+	"name": "server",
 	"version": "1.0",
 	"main": "main",
 	"dependencies": {
 		"dojo": "1.9",
-		"dijit": "1.9",
 		"util": "1.9"
 	},
 	"description": "Simple ToDo application",

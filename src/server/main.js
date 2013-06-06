@@ -28,7 +28,7 @@ define([
 		app.use('/' + p, express['static'](staticPath + p)); // jslint consider this .static as error
 	});
 
-	app.get('/', function(req, res){ res.sendfile(staticPath+'app/index.html'); });
+	app.get('/', function(req, res){ res.sendfile(staticPath+'index.html'); });
 
 	app.post('/login', login);
 	app.get('/login', function(req, res) {
