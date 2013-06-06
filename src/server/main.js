@@ -7,13 +7,10 @@ define([
 	"dojo/when",
 	"dojo/node!util",
 	"dojo/node!path",
-	"dojo/node!express",
-	"dojo/node!ejs"
+	"dojo/node!express"
 ], function(config, login, register, api, when, util, path, express) {
 	"use strict";
 	var app = express();
-	app.set('views', path.join('server', 'views'));
-	app.set('view engine', 'ejs');
 
 	app.use(express.bodyParser());
 	app.use(express.cookieParser());
@@ -31,9 +28,7 @@ define([
 		app.use('/' + p, express['static'](staticPath + p)); // jslint consider this .static as error
 	});
 
-	app.get('/', function(req, res){
-		res.render('index.ejs', {title: 'ToDo application'});
-	});
+	app.get('/', function(req, res){ res.sendfile(staticPath+'app/index.html'); });
 
 	app.post('/login', login);
 	app.get('/login', function(req, res) {
